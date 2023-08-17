@@ -1,4 +1,4 @@
-# Hydra Appliances - Tanzu bootstrap VM
+### Hydra Appliances - Tanzu bootstrap VM
 
 Debian VM OVA to bootstrap a VMware Tanzu environment.
 
@@ -6,7 +6,7 @@ This appliance is based on https://github.com/tsugliani/packer-vsphere-debian-ap
 
 VM was build with steps found on -> https://docs.vmware.com/en/VMware-Tanzu-for-Kubernetes-Operations/1.4/tko-reference-architecture/GUID-deployment-guides-tko-on-vsphere-vds.html
 
-# Requirements
+### Requirements
 To succesfully build this OVA you need the following:
 
  1 - You need to connect directly to one ESXi host, no vCenter.
@@ -18,12 +18,12 @@ To succesfully build this OVA you need the following:
 
  3 - The machine were packer will run, needs OVFtool.
 
-# Building
+### Building
 
 ./build-bootstrap.sh
 To build a VM OVA with all the Tanzu CLI and other tools.
 
-# Running
+### Running
 
 After importing de OVA into an ESXi or vCenter, you need to login and generate an SSH key pair.
 
@@ -41,7 +41,7 @@ Add the private key to the SSH agent running on your machine, and enter the pass
 If this command fails, execute "eval $(ssh-agent)" and then rerun the command.
 
 
-# Available OVF Properties for configuring the appliance:
+### Available OVF Properties for configuring the appliance:
 This is de list of available options at import time.
 
 ```bash
