@@ -16,4 +16,7 @@ apt-get install -y \
   unzip \
   byobu 
 
+echo '> Changing sysctl config'
+echo "nf_conntrack_max=131072" >> /etc/sysctl.conf
+
 echo '> Done'

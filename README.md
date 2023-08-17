@@ -4,7 +4,7 @@ Debian VM OVA to bootstrap a VMware Tanzu environment.
 
 This appliance is based on https://github.com/tsugliani/packer-vsphere-debian-appliances
 
-VM was build with steps found on -> https://docs.vmware.com/en/VMware-Tanzu-for-Kubernetes-Operations/1.4/tko-reference-architecture/GUID-deployment-guides-tko-on-vsphere-vds.html
+VM was build with steps found on -> https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-install-cli.html
 
 ### Requirements
 To succesfully build this OVA you need the following:
@@ -34,7 +34,7 @@ After importing de OVA into an ESXi or vCenter, you need to login and generate a
 
 
 ```bash 
-ssh-keygen -t rsa -b 4096 -C "email@example.com"
+ssh-keygen -t rsa -b 4096 -C "hydra@hydra1303.com"
 ```
 
 Add the private key to the SSH agent running on your machine, and enter the password you created in the previous step.

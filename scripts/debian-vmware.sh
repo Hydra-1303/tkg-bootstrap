@@ -14,45 +14,52 @@ apt-get install -y \
 ## Get Tanu CLI
 echo '> Getting Tanzu CLI from DALTOOLS'
 cd /tmp
-curl -O http://daltools.aanetworks.org/tanzu/tanzu-cli-bundle-linux-amd64.tar
-tar -xvf tanzu-cli-bundle-linux-amd64.tar
+curl -O http://daltools.aanetworks.org/tanzu/tanzu-cli-bundle-linux-amd64.tar.gz
+tar -zxvf tanzu-cli-bundle-linux-amd64.tar.gz
 cd ./cli/
 echo '> Installing tanzu cli binary'
-sudo install core/v1.4.0/tanzu-core-linux_amd64 /usr/local/bin/tanzu
+sudo install core/v0.25.4/tanzu-core-linux_amd64 /usr/local/bin/tanzu
 chmod +x /usr/local/bin/tanzu
+tanzu init
 
-## Install TKG CLI Plugins
-echo '> Installing plugins'
-cd /tmp
-tanzu plugin install --local ./cli all
+# Install Tanzu plugins
+echo '> Install Tanzu plugins'
+cd /tmp/cli
+tanzu plugin sync
+sleep 5
+tanzu plugin list
+sleep 5
 
 ## Install Kubectl CLI
 echo '> Downloading kubectl binary'
 cd /tmp
-curl -O http://daltools.aanetworks.org/tanzu/kubectl-linux-v1.21.2+vmware.1.gz
-gunzip kubectl-linux-v1.21.2+vmware.1.gz
+curl -O http://daltools.aanetworks.org/tanzu/kubectl-linux-v1.23.10+vmware.1.gz
+gunzip kubectl-linux-v1.23.10+vmware.1.gz
 echo '> Installing kubectl binary'
-mv kubectl-linux-v1.21.2+vmware.1 /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+mv kubectl-linux-v1.23.10+vmware.1.gz /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
-# Instal Carvel tools
-echo '> Installing Carvel tools'
+
+# Install Carvel tools
 cd /tmp/cli
-gunzip ytt-linux-amd64-v0.34.0+vmware.1.gz
-chmod ugo+x ytt-linux-amd64-v0.34.0+vmware.1 && mv ./ytt-linux-amd64-v0.34.0+vmware.1 /usr/local/bin/ytt
-
-gunzip kapp-linux-amd64-v0.37.0+vmware.1.gz
-chmod ugo+x kapp-linux-amd64-v0.37.0+vmware.1 && mv ./kapp-linux-amd64-v0.37.0+vmware.1 /usr/local/bin/kapp
-
-gunzip kbld-linux-amd64-v0.30.0+vmware.1.gz
-chmod ugo+x kbld-linux-amd64-v0.30.0+vmware.1 && mv ./kbld-linux-amd64-v0.30.0+vmware.1 /usr/local/bin/kbld
-
-gunzip imgpkg-linux-amd64-v0.10.0+vmware.1.gz
-chmod ugo+x imgpkg-linux-amd64-v0.10.0+vmware.1 && mv ./imgpkg-linux-amd64-v0.10.0+vmware.1 /usr/local/bin/imgpkg
 
 # Install yq
-echo '> Installing yq'
-cd /tmp
-curl -O https://github.com/mikefarah/yq/releases/download/v4.13.4/yq_linux_amd64.tar.gz
-tar -xvf yq_linux_amd64.tar && mv yq_linux_amd64 /usr/local/bin/yq
+gunzip ytt-linux-amd64-v0.41.1+vmware.1.gz
+chmod ugo+x ytt-linux-amd64-v0.41.1+vmware.1
+mv ./ytt-linux-amd64-v0.41.1+vmware.1 /usr/local/bin/ytt
+
+# install kapp
+gunzip kapp-linux-amd64-v0.49.0+vmware.1.gz
+chmod ugo+x kapp-linux-amd64-v0.49.0+vmware.1
+mv ./kapp-linux-amd64-v0.49.0+vmware.1 /usr/local/bin/kapp
+
+# install kbld
+gunzip kbld-linux-amd64-v0.34.0+vmware.1.gz
+chmod ugo+x kbld-linux-amd64-v0.34.0+vmware.1
+mv ./kbld-linux-amd64-v0.34.0+vmware.1 /usr/local/bin/kbld
+
+# Install imgpkg
+gunzip imgpkg-linux-amd64-v0.29.0+vmware.1.gz
+chmod ugo+x imgpkg-linux-amd64-v0.29.0+vmware.1
+mv ./imgpkg-linux-amd64-v0.29.0+vmware.1 /usr/local/bin/imgpkg
 
 echo '> debian-vmware.sh is Done'
