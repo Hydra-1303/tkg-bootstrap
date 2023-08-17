@@ -13,7 +13,8 @@ apt-get install -y \
 
 ## Get Tanu CLI
 echo '> Getting Tanzu CLI from DALTOOLS'
-cd /tmp/ && curl http://daltools.aanetworks.org/tanzu/tanzu-cli-bundle-linux-amd64.tar
+cd /tmp
+curl -O http://daltools.aanetworks.org/tanzu/tanzu-cli-bundle-linux-amd64.tar
 tar -xvf tanzu-cli-bundle-linux-amd64.tar
 cd ./cli/
 echo '> Installing tanzu cli binary'
@@ -22,11 +23,13 @@ chmod +x /usr/local/bin/tanzu
 
 ## Install TKG CLI Plugins
 echo '> Installing plugins'
-tanzu plugin install --local all
+cd /tmp
+tanzu plugin install --local ./cli all
 
 ## Install Kubectl CLI
 echo '> Downloading kubectl binary'
-cd /tmp && curl http://daltools.aanetworks.org/tanzu/kubectl-linux-v1.21.2+vmware.1.gz
+cd /tmp
+curl -O http://daltools.aanetworks.org/tanzu/kubectl-linux-v1.21.2+vmware.1.gz
 gunzip kubectl-linux-v1.21.2+vmware.1.gz
 echo '> Installing kubectl binary'
 mv kubectl-linux-v1.21.2+vmware.1 /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
@@ -48,7 +51,8 @@ chmod ugo+x imgpkg-linux-amd64-v0.10.0+vmware.1 && mv ./imgpkg-linux-amd64-v0.10
 
 # Install yq
 echo '> Installing yq'
-cd /tmp/ && curl https://github.com/mikefarah/yq/releases/download/v4.13.4/yq_linux_amd64.tar.gz
+cd /tmp
+curl -O https://github.com/mikefarah/yq/releases/download/v4.13.4/yq_linux_amd64.tar.gz
 tar -xvf yq_linux_amd64.tar && mv yq_linux_amd64 /usr/local/bin/yq
 
 echo '> debian-vmware.sh is Done'

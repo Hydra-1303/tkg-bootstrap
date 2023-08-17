@@ -10,12 +10,10 @@ echo '> Installing Network utilities...'
 
 apt-get install -y \
   ntp \
-  frr \
   curl \
   wget \
   rsync \
   telnet \
-  netcat \
   dnsmasq \
   mtr-tiny \
   speedometer \
