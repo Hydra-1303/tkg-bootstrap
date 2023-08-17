@@ -1,0 +1,8 @@
+{
+  "builder_host": "esxi1.aanetworks.org",
+  "builder_host_username": "root",
+  "builder_host_password": "password",
+  "builder_host_datastore": "esxi1-datastore-nvme",
+  "builder_host_folder": "/Tanzu",
+  "builder_host_portgroup": "Tanzu_VLAN12"
+}
