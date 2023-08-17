@@ -10,6 +10,7 @@ VM was build with steps found on -> https://docs.vmware.com/en/VMware-Tanzu-for-
 To succesfully build this OVA you need the following:
 
  1 - You need to connect directly to one ESXi host, no vCenter.
+ 
  2 - The ESXi needs the option GuestIPHack set to 1
 
 ```bash
@@ -19,8 +20,12 @@ To succesfully build this OVA you need the following:
  3 - The machine were packer will run, needs OVFtool.
 
 ### Building
+First you need to update values on bootstrap-builder.json file.
 
+```bash
 ./build-bootstrap.sh
+```
+
 To build a VM OVA with all the Tanzu CLI and other tools.
 
 ### Running
