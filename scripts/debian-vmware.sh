@@ -36,7 +36,7 @@ cd /tmp
 curl -O http://daltools.aanetworks.org/tanzu/kubectl-linux-v1.23.10+vmware.1.gz
 gunzip kubectl-linux-v1.23.10+vmware.1.gz
 echo '> Installing kubectl binary'
-mv kubectl-linux-v1.23.10+vmware.1.gz /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+mv kubectl-linux-v1.23.10+vmware.1 /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
 
 # Install Carvel tools
