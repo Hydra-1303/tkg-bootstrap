@@ -52,4 +52,4 @@ EOF
 chmod +x /etc/rc.local
 systemctl daemon-reload
 
-echo '> Done'
+echo '> debian-settings is Done'

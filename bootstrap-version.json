@@ -6,6 +6,7 @@
     "vm_name": "tkg-bootstrap",
     "guest_os_type": "debian10-64",
     "hostname": "tkg-bootstrap",
+    "domain": "hydra.lab",
     "numvcpus": "2",
     "ramsize": "8096",
     "disk_size": "8000",

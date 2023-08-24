@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Original Script from: https://github.com/lamw/vcenter-event-broker-appliance / William Lam
+# Updated for Tanzu bootstrap VM
 
 OUTPUT_PATH="../output-${APPLIANCE_NAME}"
 
@@ -20,7 +21,7 @@ else
     sed -i "/^    <File ovf:href=\"${APPLIANCE_NAME}-file1.nvram\".*$/d" ${OUTPUT_PATH}/${APPLIANCE_NAME}.ovf
 fi
 
-ovftool ${OUTPUT_PATH}/${APPLIANCE_NAME}.ovf ${OUTPUT_PATH}/${APPLIANCE_NAME}.ova
+ovftool ${OUTPUT_PATH}/${APPLIANCE_NAME}.ovf ${OUTPUT_PATH}/${APPLIANCE_NAME}_${APPLIANCE_VERSION}.ova
 rm -f appliance.xml
 rm -f ${OUTPUT_PATH}/${APPLIANCE_NAME}.ovf
 rm -f ${OUTPUT_PATH}/${APPLIANCE_NAME}-file1.nvram

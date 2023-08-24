@@ -10,4 +10,4 @@ echo '> Installing Debian updates...'
 apt-get update
 apt-get -y upgrade
 
-echo '> Done'
+echo '> debian-update.sh is Done'

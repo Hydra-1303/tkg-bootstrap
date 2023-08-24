@@ -28,4 +28,4 @@ add-apt-repository \
 apt-get update
 apt-get install -y docker-ce
 
-echo '> docker.sh is Done'
+echo '> debian-docker.sh is Done'
