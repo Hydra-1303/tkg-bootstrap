@@ -14,7 +14,7 @@
         "keyboard-configuration/xkb-keymap=us <wait>",
         "netcfg/choose_interface=eth0 <wait>",
         "netcfg/get_hostname={{ user `hostname` }} <wait>",
-        "netcfg/get_domain=hydra.lab <wait>",
+        "netcfg/get_domain={{ user `domain` }} <wait>",
         "fb=false <wait>",
         "debconf/frontend=noninteractive <wait>",
         "console-setup/ask_detect=false <wait>",
@@ -97,12 +97,9 @@
       "scripts": [
         "scripts/debian-update.sh",
         "scripts/debian-system.sh",
-        "scripts/debian-storage.sh",
         "scripts/debian-network.sh",
-        "scripts/debian-hashicorp.sh",
         "scripts/debian-vmware.sh",
         "scripts/debian-settings.sh",
-        "scripts/debian-powershell.sh",
         "scripts/debian-docker.sh",
         "scripts/debian-cleanup.sh"
         

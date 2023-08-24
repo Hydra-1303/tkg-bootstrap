@@ -14,9 +14,6 @@ apt-get install -y \
   wget \
   rsync \
   telnet \
-  dnsmasq \
-  mtr-tiny \
-  speedometer \
-  bridge-utils
+  mtr-tiny 
 
-echo '> Done'
+echo '> debian-network.sh is Done'

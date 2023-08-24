@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -rf output-tkg-bootstrap-*
+rm -rf output-*
 
 packer build \
     --var-file="bootstrap-builder.json" \
