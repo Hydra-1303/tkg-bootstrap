@@ -20,13 +20,13 @@ To succesfully build this OVA you need the following:
  3 - The machine were packer will run, needs OVFtool.
 
 ### Building
-First you need to update values on bootstrap-builder.json file.
+First you need to update values on bootstrap-builder.json file and then run the following command:
 
 ```bash
 ./build-bootstrap.sh
 ```
 
-To build a VM OVA with all the Tanzu CLI and other tools.
+at the end you will have a VM OVA with all the Tanzu CLI and other tools.
 
 ### Running
 
